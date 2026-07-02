@@ -1,0 +1,125 @@
+<svg width="900" height="190" viewBox="0 0 900 190" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="sl" width="1" height="3" patternUnits="userSpaceOnUse">
+    <rect width="1" height="1" y="2" fill="#000" opacity="0.18"/>
+  </pattern>
+  <filter id="tglow" x="-20%" y="-40%" width="140%" height="180%">
+    <feGaussianBlur stdDeviation="3.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="redglow" x="-20%" y="-40%" width="140%" height="180%">
+    <feGaussianBlur stdDeviation="2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <style>
+    @keyframes flicker { 0%,94%,100%{opacity:1} 95%{opacity:.5} 97%{opacity:.8} 98%{opacity:.4} 99%{opacity:1} }
+    .screen { animation: flicker 7s infinite; }
+    @keyframes cursorblink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+    .cursor { animation: cursorblink 1s infinite; }
+    @keyframes matrixpulse1 { 0%{opacity:.12} 33%{opacity:.55} 66%{opacity:.08} 100%{opacity:.12} }
+    @keyframes matrixpulse2 { 0%{opacity:.08} 40%{opacity:.5} 80%{opacity:.1} 100%{opacity:.08} }
+    @keyframes matrixpulse3 { 0%{opacity:.5} 50%{opacity:.1} 100%{opacity:.5} }
+    .mc1 { animation: matrixpulse1 2.3s infinite; }
+    .mc2 { animation: matrixpulse2 1.9s infinite; }
+    .mc3 { animation: matrixpulse3 2.7s infinite; }
+  </style>
+</defs>
+
+<!-- Deep dark CRT bg -->
+<rect width="900" height="190" fill="#050a0e" rx="6"/>
+
+<!-- Outer CRT glow border -->
+<rect width="900" height="190" rx="6" fill="none" stroke="#22c55e" stroke-width="2.5" opacity="0.5"/>
+<rect x="4" y="4" width="892" height="182" rx="4" fill="none" stroke="#22c55e" stroke-width="0.8" opacity="0.15"/>
+
+<!-- Binary rain — left column -->
+<text font-family="Courier New,monospace" font-size="11" fill="#14532d" opacity="0.15" x="8">
+  <tspan dy="16" x="8">01101000</tspan><tspan dy="14" x="8">11001101</tspan>
+  <tspan dy="14" x="8">01000011</tspan><tspan dy="14" x="8">01101011</tspan>
+  <tspan dy="14" x="8">00110101</tspan><tspan dy="14" x="8">10001110</tspan>
+  <tspan dy="14" x="8">01110010</tspan><tspan dy="14" x="8">11000100</tspan>
+  <tspan dy="14" x="8">00000001</tspan><tspan dy="14" x="8">01101101</tspan>
+</text>
+<!-- Binary rain — right column -->
+<text font-family="Courier New,monospace" font-size="11" fill="#14532d" opacity="0.15" text-anchor="end">
+  <tspan dy="16" x="892">10110100</tspan><tspan dy="14" x="892">01001010</tspan>
+  <tspan dy="14" x="892">11101100</tspan><tspan dy="14" x="892">00110101</tspan>
+  <tspan dy="14" x="892">10001110</tspan><tspan dy="14" x="892">01110011</tspan>
+  <tspan dy="14" x="892">11000110</tspan><tspan dy="14" x="892">00101011</tspan>
+  <tspan dy="14" x="892">10110111</tspan><tspan dy="14" x="892">01001100</tspan>
+</text>
+
+<!-- Animated bright matrix hits -->
+<text class="mc1" font-family="Courier New,monospace" font-size="11" fill="#4ade80" x="8" y="72">01101000</text>
+<text class="mc2" font-family="Courier New,monospace" font-size="11" fill="#4ade80" x="8" y="114">00110101</text>
+<text class="mc3" font-family="Courier New,monospace" font-size="11" fill="#4ade80" text-anchor="end" x="892" y="44">11101100</text>
+<text class="mc1" font-family="Courier New,monospace" font-size="11" fill="#4ade80" text-anchor="end" x="892" y="142">10110111</text>
+
+<!-- === MAIN SCREEN CONTENT === -->
+<g class="screen">
+
+  <!-- Terminal prompt line -->
+  <text x="450" y="52" text-anchor="middle"
+    font-family="Courier New,monospace" font-size="13"
+    fill="#4ade80" letter-spacing="1.5" opacity="0.8">
+    root@github:~$ ./CodeSparks45 --init --mode=hacker
+  </text>
+
+  <!-- GLITCH TITLE — Red layer -->
+  <text x="450" y="120" text-anchor="middle"
+    font-family="Courier New,monospace" font-size="54" font-weight="900"
+    fill="#ef4444" letter-spacing="6" filter="url(#redglow)" opacity="0">
+    CODESPARKS45
+    <animate attributeName="opacity"
+      values="0;0;0;0;0;0;0;0;0;0.75;0;0.5;0;0;0;0;0;0;0;0;0"
+      dur="5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 0,0; -5,2; 0,0" keyTimes="0;0.79;0.84;1"
+      dur="5s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- GLITCH TITLE — Blue layer -->
+  <text x="450" y="120" text-anchor="middle"
+    font-family="Courier New,monospace" font-size="54" font-weight="900"
+    fill="#3b82f6" letter-spacing="6" opacity="0">
+    CODESPARKS45
+    <animate attributeName="opacity"
+      values="0;0;0;0;0;0;0;0;0;0;0.6;0;0.45;0;0;0;0;0;0;0;0"
+      dur="5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 0,0; 5,-2; 0,0" keyTimes="0;0.79;0.84;1"
+      dur="5s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- MAIN TITLE — Green (primary) -->
+  <text x="450" y="120" text-anchor="middle"
+    font-family="Courier New,monospace" font-size="54" font-weight="900"
+    fill="#22c55e" letter-spacing="6" filter="url(#tglow)">
+    CODESPARKS45
+    <animate attributeName="opacity"
+      values="1;1;1;1;1;1;1;1;0.35;1;0.6;1;1;1;1;1;1;1;1;1;1"
+      dur="5s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Blinking cursor after title -->
+  <rect class="cursor" x="790" y="88" width="5" height="36" fill="#22c55e" rx="1"/>
+
+  <!-- Subtitle -->
+  <text x="450" y="157" text-anchor="middle"
+    font-family="Courier New,monospace" font-size="13"
+    fill="#86efac" letter-spacing="3.5" opacity="0.9">
+    [ MERN · OPEN SOURCE · SSoC'26 · DSA · BUILDER ]
+  </text>
+
+  <!-- Bottom version tag -->
+  <text x="450" y="178" text-anchor="middle"
+    font-family="Courier New,monospace" font-size="9"
+    fill="#4ade80" letter-spacing="2" opacity="0.35">
+    v3.0.0 · YEAR 3 BTEC IT · SANGLI, IN · EST. 2022
+  </text>
+
+</g>
+
+<!-- Scanline overlay -->
+<rect width="900" height="190" fill="url(#sl)" rx="6"/>
+</svg>
