@@ -29,7 +29,7 @@ System Design             ██████░░░░ 60%
 
 <img align="right" width="260" src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif"/>
 
-I'm a 3rd-year BTech IT Engineering student from Sangli, Maharashtra, building real products and contributing to open source — not just following tutorials.
+I'm a 3rd-year BTech IT Engineering student from Nanded, Maharashtra, building real products and contributing to open source
 
 - 🔭 Building **OpenContrib** — a Next.js 15 platform that helps GSSoC/Hacktoberfest/SSoC contributors discover good-first-issues faster
 - 🏠 Building **StayPG** — a mobile-first PG booking platform for Indian students, with owner + student dashboards
